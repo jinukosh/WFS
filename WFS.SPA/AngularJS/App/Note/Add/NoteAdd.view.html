@@ -1,0 +1,102 @@
+﻿<!-- BEGIN PAGE BAR -->
+<div class="page-bar">
+    <ul class="page-breadcrumb">
+        <li>
+            <a href="#/note/list">Note</a>
+            <i class="fa fa-circle"></i>
+        </li>
+        <li>
+            <span>Add Note</span>
+        </li>
+    </ul>
+</div>
+<!-- END PAGE BAR -->
+<!-- BEGIN PAGE TITLE-->
+<br />
+<!-- END PAGE TITLE-->
+<div class="portlet box green">
+    <div class="portlet-title">
+        <div class="caption">
+            <i class="fa fa-gift"></i>Add Note
+        </div>
+        <div class="tools">
+            <a href="javascript:;" class="collapse"> </a>
+        </div>
+    </div>
+    <div class="portlet-body form">
+        <!-- BEGIN FORM-->
+        <form class="form-horizontal" id="myForm" name="myForm" role="form"
+              ng-submit="validatePage(myForm.$valid) && myForm.$valid && noteAdd()" novalidate>
+            <div class="form-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group form-md-line-input"
+                             ng:class="{true:'has-error', false:''}[allowValidation && myForm.notename.$invalid]">
+                            <label class="col-md-3 control-label">Name</label>
+                            <div class="col-md-9">
+                                <input class="form-control" id="notename" type="text" name="notename" ng-model="note.Name" required placeholder="Enter the title">
+                                <div class="form-control-focus"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group form-md-line-input"
+                             ng:class="{true:'has-error', false:''}[allowValidation && myForm.notedetails.$invalid]"    >
+                            <label class="col-md-3 control-label">Details</label>
+                            <div class="col-md-9">
+                                <textarea class="form-control" rows="3" id="notedetails" name="notedetails" ng-model="note.Details" required placeholder="Enter the details"></textarea>
+                                <div class="form-control-focus"></div>
+                            </div>                            
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group form-md-line-input">
+                            <label class="col-md-3 control-label">Option</label>
+                            <div class="col-md-9">
+                                <div class="md-radio-inline">
+                                    <div class="md-radio">
+                                        <input type="radio" id="radio53" name="radio2" value="blue" class="md-radiobtn" ng-model="note.Color" ng-checked="true">
+                                        <label for="radio53">
+                                            <span class="inc"></span>
+                                            <span class="check"></span>
+                                            <span class="box"></span> Blue
+                                        </label>
+                                    </div>                                    
+                                    <div class="md-radio has-warning">
+                                        <input type="radio" id="radio55" name="radio2" value="yellow" class="md-radiobtn" ng-model="note.Color">
+                                        <label for="radio55">
+                                            <span class="inc"></span>
+                                            <span class="check"></span>
+                                            <span class="box"></span> Yellow
+                                        </label>
+                                    </div>
+                                    <div class="md-radio has-error">
+                                        <input type="radio" id="radio54" name="radio2" value="red" class="md-radiobtn" ng-model="note.Color">
+                                        <label for="radio54">
+                                            <span class="inc"></span>
+                                            <span class="check"></span>
+                                            <span class="box"></span> Red
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-actions fluid">
+                <div class="row">
+                    <div class="col-md-offset-3 col-md-9">
+                        <button type="submit" class="btn green">Save</button>
+                        <button type="button" class="btn default" ng-click="clickBack()">Back</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+        <!-- END FORM-->
+    </div>
+</div>

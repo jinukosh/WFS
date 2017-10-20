@@ -1,0 +1,82 @@
+﻿<!-- BEGIN PAGE BAR -->
+<div class="page-bar">
+    <ul class="page-breadcrumb">
+        <li>
+            <a href="#/note/list">Note</a>
+            <i class="fa fa-circle"></i>
+        </li>
+        <li>
+            <span>Note List</span>
+        </li>
+    </ul>
+</div>
+<!-- END PAGE BAR -->
+<!-- BEGIN PAGE TITLE-->
+<br />
+<!-- END PAGE TITLE-->
+<div class="col-md-12">
+    <div class="portlet box green">
+        <div class="portlet-title">
+            <div class="caption">
+                <i class="fa fa-gift"></i>Note List
+            </div>
+            <div class="tools">
+                <a href="javascript:;" class="collapse"> </a>
+            </div>
+        </div>
+        <div class="portlet-body">
+            <div class="table-toolbar">
+                <div class="btn-group col-md-5">
+                    <a id="" class="btn green" href="#/note/add">Add Note <i class="icon-plus"></i></a>
+                </div>
+                <label class="col-md-1 control-label">Filter:</label>
+                <div class="md-checkbox-inline col-md-6 checked">
+                    <div class="md-checkbox  has-{{color.name}}" ng-repeat="color in colors">
+                        <input type="checkbox" id="{{color.id}}" name="{{color.name}}" ng-checked="{{color.checked}}" ng-model="color.checked" ng-change="filterChanged(colors)">
+                        <label for="{{color.id}}">
+                            <span class="inc"></span>
+                            <span class="check"></span>
+                            <span class="box"></span>{{color.id}}
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <!-- BEGIN FORM-->
+            <div class="row">
+                <div data-ng-repeat="item in note">
+                    <div class="portlet solid {{item.Color}} col-md-4 col-md-offset-1">
+                        <div class="portlet-title">
+                            <div class="caption">
+                                <i class="fa fa-gift"></i> {{item.Name}}
+                            </div>
+                            <div class="actions">
+                                <div class="btn-group">
+                                    <a class="btn btn-sm red" href="javascript:;" data-toggle="dropdown">
+                                        <i class="fa fa-user"></i> Action
+                                        <i class="fa fa-angle-down "></i>
+                                    </a>
+                                    <ul class="dropdown-menu pull-right">
+                                        <li>
+                                            <a href="#/note/edit/{{item.Id}}">
+                                                <i class="fa fa-pencil"></i> Edit
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="" ng-really-message="Are you sure you want to delete ?" ng-really-title="Confirmation" ng-really-click="noteDelete(item.Id);">
+                                                <i class="fa fa-trash-o"></i> Delete
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="portlet-body">
+                            {{item.Details}}
+                        </div>
+                    </div>
+                </div>
+                <!-- END FORM-->
+            </div>
+    </div>
+</div>
+</div>

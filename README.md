@@ -9,4 +9,4 @@ Use the below credentials to login
 jinu@admin.com
 Password: 123
 
-Please see the 'Application Design.jpg' to understand modularization of the application
+Please see the 'Application Design.jpg' to understand modularization of the application and the 'WFS Screenshots' file to see the sample screen shot of applicaiton.

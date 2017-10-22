@@ -8,3 +8,5 @@ Publish the SPA and WebAPI projects to IIS
 Use the below credentials to login
 jinu@admin.com
 Password: 123
+
+Please see the 'Application Design.jpg' to understand modularization of the application

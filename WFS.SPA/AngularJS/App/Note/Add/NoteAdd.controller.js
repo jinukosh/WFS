@@ -3,7 +3,6 @@
         function ($scope, $routeParams, noteService) {
             $scope.noteAdd = _noteAdd;            
             $scope.note;
-            $scope.note.Color = "blue";
             $scope.validatePage = _validatePage;
             $scope.allowValidation;
 
